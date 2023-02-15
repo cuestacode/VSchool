@@ -1,0 +1,20 @@
+.title-bar {
+  text-align: center;
+  color: yellowgreen;
+}
+
+.main {
+  border: 5px dotted darkgreen;
+  width: 50%;
+  margin: auto;
+  padding: 2%;
+}
+
+.text {
+  text-align: center;
+  color: brown;
+}
+
+.button {
+  color: pink;
+}

@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+
+img {
+ 
+}
+
+.header {
+    color: rgb(227, 218, 227);
+    background-color: rgb(62, 18, 55);
+    padding: 20px;
+    text-align: center;
+}
