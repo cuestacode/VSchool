@@ -1,20 +1,15 @@
-const form = document.myForm
+let movieLine = ["pablo" , "nancy" , "oliver"]
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault()
+//console.log(movieLine)
+
+movieLine.push = ("phoebe")
+movieLine[4] = ("kachka")
+console.log(movieLine)
 
 
 
-  console.log(form.city.value)
 
-})
-
-  //console.log(form.gender.value)
-
-  // console.log(form.entertainment.value)
-  /*const checkedInputs = []
-
-  for(let i = 0; i < form.entertainment.length; i++){
+/*  for(let i = 0; i < form.entertainment.length; i++){
       if(form.entertainment[i].checked) {
         checkedInputs.push(form.entertainment[i].value)
       }
