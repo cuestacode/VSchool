@@ -64,19 +64,22 @@ body {
   width: 100%;
 }
 
-.seventy-five {
+.green {
   background-color: #8dc63f;
   height: 150px;
   width: 75%;
   border-right: 10px solid white;
+
 }
 
-.twenty-five {
+.orange {
   background-color: #e76e34;
   height: 150px;
   width: 25%;
   border-left: 10px solid white;
+  
 }
+/*media query to make page adjust past 768 px*/
 
 @media only screen and (max-width: 768px) {
   .first {
@@ -119,14 +122,14 @@ body {
     width: 100%;
   }
 
-  .seventy-five {
+  .green {
     background-color: #8dc63f;
     height: 150px;
     width: 100%;
     border-right: none;
   }
 
-  .twenty-five {
+  .orange {
     background-color: #e76e34;
     height: 150px;
     width: 100%;
