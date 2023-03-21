@@ -13,18 +13,18 @@
 
 const readlineSync = require("readline-sync");
 const greeting = console.log("After the fungi virus hit, the world as we know it came to end. The fungi is spreading faster than ever! There's a place on the other side of Fungi Forest that has successfully created a safe society, completely protected from the infected, aka funganoids. It's the only way to get to where you need to go and your last chance for survival.");
-
 const firstName = readlineSync.question ("Let's start with your name: ");
 console.log("Ok " + firstName + "," + " let's go! ");
+const fuel = ['water','protein bar', 'rest'];
+const enemies = ['funganoid', 'apex predator', 'spray attack']
+const text = readlineSync.question("The fungi sprays a highly contagious liquid into the air that spreads like a virus through our body and eventually takes over your brain. With the protection you have and keeping enough distance, you can avoid spray attacks. Enter 'y' to start your journey and 'n' to hold off. Are you ready?"); 
 // walk()
 let userInventory = [];
 let game = true;
 let hasItems = false;
 let hp = 100;
 let enemyHp = 100;
-const fuel = ['water','protein bar', 'rest'];
-const enemies = ['funganoid', 'apex predator', 'spray attack']
-const text = readlineSync.question("The fungi sprays a highly contagious liquid into the air that spreads like a virus through our body and eventually takes over your brain. With the protection you have and keeping enough distance, you can avoid spray attacks. Enter 'y' to start your journey and 'n' to hold off. Are you ready?"); 
+
 if (text === 'y' ){
   walk()
 } else if (text === 'n'){
@@ -34,16 +34,18 @@ if (text === 'y' ){
   }
 }
 console.log (text);
-while(game === true){ //While the player is alive
+while(hp > 0){ //While the player is alive
   walk()//Run the walk function 
 }
+if (hp <= 0){
+  endGame ()
+}
+// walk (text) //Move to below the walk function 
 var player = {
   name: "Player",
   hp: 50,
   attackValue: Math.floor(Math.random() * 5 + 3),
-      
   }
-// walk (text) //Move to below the walk function 
 
 function walk () { //start the walk function
   //propmt uder to walk with 'y' or 'n'
@@ -63,21 +65,10 @@ function walk () { //start the walk function
 } } else {
   console.log('hp ' + hp)
 }
-
-
-  // } else if (text === "n") {
-  //   console.log ("Take this time to fuel up. ")
-  //   game = false 
-  //   let text = readlineSync.question("Hit 'y' when you are ready to start ")
-  //   console.log(text)
-  //   if (text === "y"){
-  //   game = true 
-  //   console.log(game)
-  //   }
-  // }
 }
+enemyEncounter ()
 
-//Decides whether you encounter an enemy or not
+
 function enemyEncounter(){
 console.log('***** You have entered the enemyEncounter function *****')
 // generate number 1 or 2 and store it in a variable
@@ -91,8 +82,9 @@ if (enemyAppears === 1){
   console.log ("The coast is clear")
 }
 }
+
 function fight () {
-console.log("You have enterd the fight function")
+console.log("*****You have enterd the fight function******")
 const willFight = readlineSync.keyIn ("You've encountered an enemy and must either fight or attempt to run. Press 'f' for fight and 'r'for run. ")
 const runAway = Math.floor(Math.random() * 2);
 console.log(runAway)  
@@ -107,8 +99,9 @@ console.log("You've decided to make a run for it!")
 // // winner () // create function for winner with random amount damage for user (& enemy?)
 }
 }
+
 function battle(){
-  console.log("You have entered the battle function")
+  console.log("******You have entered the battle function*******")
   // var enemyName = enemies[Math.floor(Math.random() * 3)]
   var enemyName = enemies[0]
   console.log (`You are in a battle with a ${enemyName} !`);
@@ -138,6 +131,17 @@ function battle(){
     }
   }
 }
+
+function endGame() {
+  console.log("*****You've entered the endGame function******")
+  var totalHp = hp
+  if (totalHp <= 0){
+    console.log("Your health is not well, the game ends here.")
+  }
+}
+
+
+
 // function randomEnemy() {
 // // //   /* write what happens when they walk - either an enemy or nothing*/
 // console.log("============ You have entered the random enemy function ==========")
