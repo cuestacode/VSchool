@@ -12,7 +12,7 @@
 'use strict';
 
 const readlineSync = require("readline-sync");
-const greeting = console.log("After the fungi virus hit, the world as we know it came to end. The fungi is spreading faster than ever! There's a place on the other side of Fungi Forest that has successfully created a safe society, completely protected from the infected, aka funganoids. It's the only way to get to where you need to go and your last chance for survival.");
+const greeting = console.log("After the fungi virus hit, the world as we know it came to end. There's a place on the other side of Fungi Forest that has successfully created a safe society, completely protected from the infected, aka funganoids. It's the only way to get to where you need to go and your last chance for survival.");
 const firstName = readlineSync.question ("Let's start with your name: ");
 console.log("Ok " + firstName + "," + " let's go! ");
 const fuel = ['water','protein bar', 'rest'];
@@ -40,6 +40,7 @@ while(hp > 0){ //While the player is alive
 if (hp <= 0){
   endGame ()
 }
+
 // walk (text) //Move to below the walk function 
 var player = {
   name: "Player",
